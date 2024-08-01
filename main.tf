@@ -31,12 +31,5 @@ resource "aws_ecs_service" "my_flask_app_service" {
   task_definition = aws_ecs_task_definition.my_flask_app_task.arn
   desired_count   = 2
 
-  # Load balancer configuration if needed
-  # load_balancer {
-  #   target_group_arn = aws_lb_target_group.my_target_group.arn
-  #   container_name   = "my-flask-app"
-  #   container_port   = 5000
-  # }
-
   launch_type = "EC2"
 }
